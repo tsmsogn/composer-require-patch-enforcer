@@ -11,9 +11,20 @@ This pushes root requirements toward explicit pins to reduce accidental wide con
 
 ## Installation
 
-### 1. Add the package
+### From Packagist (recommended)
 
-From a VCS path (development):
+After the package is registered on [Packagist](https://packagist.org/), install a **stable release with an exact version** (this matches how this plugin expects root requirements to be written once it is active):
+
+```bash
+composer require tsmsogn/composer-require-patch-enforcer:1.0.0
+composer config allow-plugins.tsmsogn/composer-require-patch-enforcer true
+```
+
+The **first** time you add this package, the plugin is not in `vendor` yet, so Composer will also accept a range (e.g. `^1.0`) for that single command. After the plugin is installed, further `composer require` calls must use **exact** `x.y.z` for every package on the command line (or use `COMPOSER_REQUIRE_PATCH_ENFORCER_SKIP=1` / `--no-plugins`). Upgrading this plugin to `1.0.1` should look like: `composer require tsmsogn/composer-require-patch-enforcer:1.0.1`.
+
+### Development: VCS or path
+
+From Git (no Packagist):
 
 ```bash
 composer config repositories.composer-require-patch-enforcer vcs https://github.com/tsmsogn/composer-require-patch-enforcer.git
@@ -27,9 +38,9 @@ composer config repositories.composer-require-patch-enforcer path ../composer-re
 composer require tsmsogn/composer-require-patch-enforcer:@dev
 ```
 
-If the package is not on Packagist, you may need `minimum-stability` or an explicit stability suffix (e.g. `@dev`) as shown above.
+If the package is not on Packagist, you may need `minimum-stability` or a stability suffix (e.g. `@dev`) as above.
 
-### 2. Allow the plugin
+### Allow the plugin
 
 Composer 2.2+ requires you to opt in to plugins:
 

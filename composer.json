@@ -3,6 +3,18 @@
     "description": "Composer plugin that enforces exact x.y.z versions on composer require (no range operators)",
     "type": "composer-plugin",
     "license": "MIT",
+    "keywords": [
+        "composer-plugin",
+        "composer",
+        "require",
+        "version",
+        "supply-chain"
+    ],
+    "homepage": "https://github.com/tsmsogn/composer-require-patch-enforcer",
+    "support": {
+        "issues": "https://github.com/tsmsogn/composer-require-patch-enforcer/issues",
+        "source": "https://github.com/tsmsogn/composer-require-patch-enforcer"
+    },
     "require": {
         "php": ">=8.1",
         "composer-plugin-api": "^2.3"
