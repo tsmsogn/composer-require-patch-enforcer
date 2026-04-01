@@ -16,7 +16,7 @@ This pushes root requirements toward explicit pins to reduce accidental wide con
 From a VCS path (development):
 
 ```bash
-composer config repositories.composer-require-patch-enforcer vcs https://github.com/your-org/composer-require-patch-enforcer.git
+composer config repositories.composer-require-patch-enforcer vcs https://github.com/tsmsogn/composer-require-patch-enforcer.git
 composer require tsmsogn/composer-require-patch-enforcer:@dev
 ```
 
